@@ -31,7 +31,7 @@
    &trans &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U     &kp Y   &kp SEMI &trans
    &trans &mt LSHFT A &kp R &kp S &kp T &kp G   &kp M &kp N  &kp E     &kp I   &mt RSHFT O    &trans
    &trans &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &trans
-                &kp LGUI &lt LOWER TAB &kp SPACE   &kp BKSP &lt RAISE RET &kp RALT
+                &kp LGUI &lt 1 TAB &kp SPACE   &kp BKSP &lt 2 RET &kp RALT
                         >;
                 };
                 lower_layer {
