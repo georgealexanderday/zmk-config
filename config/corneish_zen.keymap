@@ -56,7 +56,7 @@
         label = "raise";
         bindings = <
           &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans 
-          &trans &trans &trans &trans &trans &trans &LEFT &UP &DOWN &RIGHT
+          &trans &trans &trans &trans &trans &trans &kp LEFT &kp UP &kp DOWN &kp RIGHT
           &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans 
           &trans &trans &trans &trans &trans &trans 
         >;
