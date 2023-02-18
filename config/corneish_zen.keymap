@@ -27,30 +27,30 @@
       default_layer {
         label = "UwU";
         bindings = <
-          &kp Q       &kp W     &kp F       &kp P       &kp B     &kp J &kp L &kp U     &kp Y   &kp SQT
-          &hm LSHFT A &hm ALT R &hm LGUI S  &hm LCTRL T &kp G     &kp M &kp N &kp E     &kp I   &hm RSHFT O
+          &kp Q       &kp W     &kp F       &kp P       &kp B     &kp J &kp L &kp U &kp Y   &kp SQT
+          &mt LSHFT A &mt ALT R &mt LGUI S  &mt LCTRL T &kp G     &kp M &kp N &kp E &kp I   &mt RSHFT O
           &kp Z       &kp X     &kp C       &kp D       &kp V     &kp K &kp H &kp COMMA &kp DOT &kp FSLH
                       &kp LGUI  &lt 1 TAB   &kp SPACE                   &kp BKSP    &lt 2 RET &kp RALT
         >;
       };
 
       lower_layer {
-        label = "LOWER";
+        label = "lower";
         bindings = <
-          &kp Q       &kp W     &kp F       &kp P       &kp B     &kp J &kp L &kp U     &kp Y   &kp SQT
-          &hm LSHFT A &hm ALT R &hm LGUI S  &hm LCTRL T &kp G     &kp M &kp N &kp E     &kp I   &hm RSHFT O
-          &kp Z       &kp X     &kp C       &kp D       &kp V     &kp K &kp H &kp COMMA &kp DOT &kp FSLH
-                      &kp LGUI  &lt 1 TAB   &kp SPACE                   &kp BKSP    &lt 2 RET &kp RALT
+          &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans 
+          &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans 
+          &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans 
+          &trans &trans &trans &trans &trans &trans 
         >;
       };
 
       raise_layer {
-        label = "RAISE";
+        label = "raise";
         bindings = <
-          &kp Q       &kp W     &kp F       &kp P       &kp B     &kp J &kp L &kp U     &kp Y   &kp SQT
-          &hm LSHFT A &hm ALT R &hm LGUI S  &hm LCTRL T &kp G     &kp M &kp N &kp E     &kp I   &hm RSHFT O
-          &kp Z       &kp X     &kp C       &kp D       &kp V     &kp K &kp H &kp COMMA &kp DOT &kp FSLH
-                      &kp LGUI  &lt 1 TAB   &kp SPACE                   &kp BKSP    &lt 2 RET &kp RALT
+          &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans 
+          &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans 
+          &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans 
+          &trans &trans &trans &trans &trans &trans 
         >;
       };
   };
