@@ -52,7 +52,7 @@
 
       tdv: tap_dance_v {
         compatible = "zmk,behavior-tap-dance";
-        label = "TAP_DANCE_Q";
+        label = "TAP_DANCE_V";
         #binding-cells = <0>;
         tapping-term-ms = <200>;
         bindings = <&kp V>, <&pastey>;
