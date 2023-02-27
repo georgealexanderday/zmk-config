@@ -39,7 +39,7 @@
 
     macros {
       pastey: pastey {
-        compatible = "zmk, behaviour-macro";
+        compatible = "zmk, behavior-macro";
         label = "PASTEY";
         #binding-cells = <0>;
         bindings
