@@ -37,6 +37,20 @@
         };
     };
 
+    macros {
+      pastey: pastey {
+        compatible = "zmk, behaviour-macro";
+        label = "PASTEY";
+        #binding-cells = <0>;
+        bindings
+          = <&macro_press &kp LGUI>
+          , <&macro_tap &kp V>
+          , <&macro_release &kp LGUI>
+          , <&macro_tap &kp RET>
+          ;
+      };
+    };
+
     combos {
         compatible = "zmk,combos";
         combo_esc {
@@ -55,7 +69,7 @@
         bindings = <
           &tdq        &kp W       &kp F       &kp P       &kp B     &kp J &kp L       &kp U       &kp Y       &kp SQT
           &hm LSHFT A &hm LCTRL R  &hm LALT S  &hm LGUI T &kp G     &kp M &hm RGUI N  &hm RALT E  &hm RCTRL I &hm RSHFT O
-          &kp Z       &kp X       &kp C       &kp D       &kp V     &kp K &kp H       &kp COMMA   &kp DOT     &kp FSLH
+          &kp Z       &kp X       &kp C       &kp D       &hm &pastey V     &kp K &kp H       &kp COMMA   &kp DOT     &kp FSLH
                       &kp HYPER &kp TAB &lt 1 SPACE                       &lt 2 BKSP &kp RET &kp MEH
         >;
       };
