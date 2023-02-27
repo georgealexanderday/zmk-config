@@ -8,6 +8,13 @@
   };
 };
 
+#define HYPER LS(LC(LA(LGUI)))
+#define MEH LS(LC(LALT))
+
+&caps_word {
+    continue-list = <UNDERSCORE MINUS>;
+};
+
 / {
     behaviors {
       hm: homerow_mods {
@@ -32,7 +39,7 @@
     combos {
         compatible = "zmk,combos";
         combo_esc {
-            timeout-ms = <50>;
+            timeout-ms = <100>;
             key-positions = <13 16>;
             layers = <0>;
             bindings = <&kp ESC>;
@@ -48,7 +55,7 @@
           &tdq        &kp W       &kp F       &kp P       &kp B     &kp J &kp L       &kp U       &kp Y       &kp SQT
           &hm LSHFT A &hm LCTRL R  &hm LALT S  &hm LGUI T &kp G     &kp M &hm RGUI N  &hm RALT E  &hm RCTRL I &hm RSHFT O
           &kp Z       &kp X       &kp C       &kp D       &kp V     &kp K &kp H       &kp COMMA   &kp DOT     &kp FSLH
-                      &kp LGUI  &kp TAB &lt 1 SPACE                       &lt 2 BKSP &kp RET &kp RALT
+                      &kp HYPER &kp TAB &lt 1 SPACE                       &lt 2 BKSP &kp RET &kp MEH
         >;
       };
 
@@ -57,7 +64,7 @@
         bindings = <
           &kp GRAVE &kp PERCENT &kp LBRC  &kp RBRC &trans           &trans      &kp AMPS  &kp PIPE  &kp HASH  &kp SEMI
           &kp TILDE &kp BSLH    &kp LPAR  &kp RPAR &kp CARET        &kp DOLLAR  &kp MINUS &kp COLON &kp UNDER &kp EQUAL 
-          &trans    &trans      &kp LBKT  &kp RBKT &trans           &trans      &kp EXCL  &kp AT    &trans    &trans 
+          &caps_word &trans      &kp LBKT  &kp RBKT &trans           &trans      &kp EXCL  &kp AT    &trans    &trans 
                     &trans      &trans    &trans                                &trans    &trans    &trans 
         >;
       };
@@ -65,9 +72,9 @@
       raise_layer {
         label = "raise";
         bindings = <
-          &kp FSLH  &kp N7  &kp N8  &kp N9  &kp STAR                &trans  &trans    &trans    &trans &trans 
-          &kp N0    &kp N4  &kp N5  &kp N6  &kp MINUS               &trans  &kp LEFT  &kp DOWN  &kp UP &kp RIGHT
-          &kp EQUAL &kp N1  &kp N2  &kp N3  &kp PLUS                &trans  &trans    &trans    &trans &trans 
+          &kp FSLH  &kp N7  &kp N8  &kp N9  &kp STAR                &trans  &trans    &bt BT_NXT  &bt BT_PREV &bt BT_CLR 
+          &kp N0    &kp N4  &kp N5  &kp N6  &kp PLUS               &trans  &kp LEFT  &kp DOWN  &kp UP &kp RIGHT
+          &kp EQUAL &kp N1  &kp N2  &kp N3  &kp MINUS                &trans  &trans    &trans    &trans &trans 
                     &trans  &trans  &trans                                  &trans    &trans    &trans 
         >;
       };
