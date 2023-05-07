@@ -39,7 +39,7 @@ ZMK_BEHAVIOR(quote_morph, mod_morph,
     bindings = <&kp SQT>, <&quote_inner_morph>;
 )
 ZMK_BEHAVIOR(quote_inner_morph, mod_morph,
-    bindings = <&kp DQT>, <&kp GRAVE>;
+    bindings = <&kp DQT>, <&kp GRAVE_ACCENT>;
     mods = <(MOD_LCTL|MOD_RCTL)>;
 )
 
