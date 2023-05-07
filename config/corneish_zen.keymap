@@ -30,9 +30,9 @@
           ;
       };
 
-      left_arrow: left_arrow {
-        compatible = "zmk, behavior-macro";
-        label = "left_arrow";
+      la: left_arrow {
+        compatible = "zmk,behavior-macro";
+        label = "LEFT_ARROW";
         #binding-cells = <0>;
         bindings
           = <&macro_tap &kp MINUS>
@@ -83,6 +83,16 @@
         tapping-term-ms = <200>;
         bindings = <&kp V>, <&pastey>;
       };
+
+      skq: sticky_key_quick_release {
+        compatible = "zmk,behavior-sticky-key";
+        label = "STICKY_KEY_QUICK_RELEASE";
+        #binding-cells = <1>;
+        bindings = <&kp>;
+        release-after-ms = <400>;
+        quick-release;
+        ignore-modifiers;
+      };
     };
 
 
@@ -95,7 +105,7 @@
           &tdq        &kp W       &kp F       &kp P       &kp B     &kp J &kp L       &kp U       &kp Y       &kp SQT
           &lh_pht LSHFT A &lh_pht LCTRL R  &lh_pht LALT S  &lh_pht LGUI T &kp G     &kp M &rh_pht RGUI N  &rh_pht RALT E  &rh_pht RCTRL I &rh_pht RSHFT O
           &kp Z       &kp X       &kp C       &kp D       &tdv     &kp K &kp H       &kp COMMA   &kp DOT     &kp FSLH
-                      &kp HYPER &kp TAB &lt 1 SPACE                       &lt 2 BKSP &kp RET &kp MEH
+                      &kp HYPER &kp TAB &lt 1 SPACE                       &lt 2 BKSP &kp RET &skq
         >;
       };
 
@@ -104,7 +114,7 @@
         bindings = <
           &kp GRAVE &kp PERCENT &kp LBRC  &kp RBRC &trans           &trans      &kp AMPS  &kp PIPE  &kp HASH  &kp SEMI
           &kp ESC &kp BSLH    &kp LPAR  &kp RPAR &kp CARET        &kp DOLLAR  &kp MINUS &kp COLON &kp UNDER &kp EQUAL 
-          &kp TILDE &trans      &kp LBKT  &kp RBKT &trans           &trans      &kp EXCL  &kp AT    &left_arrow    &caps_word
+          &kp TILDE &trans      &kp LBKT  &kp RBKT &trans           &trans      &kp EXCL  &kp AT    &la    &caps_word
                     &trans      &trans    &trans                                &trans    &trans    &trans 
         >;
       };
