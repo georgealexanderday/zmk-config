@@ -17,6 +17,18 @@
 
 
 / {
+    combos {
+        compatible = "zmk,combos";
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <1 2>;
+            bindings = <&kp ESC>;
+        };
+    };
+};
+
+
+/ {
     macros {
       pastey: pastey {
         compatible = "zmk,behavior-macro";
@@ -75,6 +87,7 @@
         tapping-term-ms = <200>;
         bindings = <&kp Q>, <&kp ESC>;
       };
+
 
       tdv: tap_dance_v {
         compatible = "zmk,behavior-tap-dance";
