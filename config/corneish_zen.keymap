@@ -105,7 +105,7 @@
           &tdq        &kp W       &kp F       &kp P       &kp B     &kp J &kp L       &kp U       &kp Y       &kp SQT
           &lh_pht LSHFT A &lh_pht LCTRL R  &lh_pht LALT S  &lh_pht LGUI T &kp G     &kp M &rh_pht RGUI N  &rh_pht RALT E  &rh_pht RCTRL I &rh_pht RSHFT O
           &kp Z       &kp X       &kp C       &kp D       &tdv     &kp K &kp H       &kp COMMA   &kp DOT     &kp FSLH
-                      &kp HYPER &kp TAB &lt 1 SPACE                       &lt 2 BKSP &kp RET &skq LSHFT
+                      &kp HYPER &kp TAB &lt 1 SPACE                       &lt 2 BKSP &kp RET &kp MEH
         >;
       };
 
