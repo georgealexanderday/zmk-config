@@ -32,11 +32,12 @@
 
       left_arrow: left_arrow {
         compatible = "zmk, behavior-macro";
-        label = "->";
+        label = "left_arrow";
         #binding-cells = <0>;
         bindings
           = <&macro_tap &kp MINUS>
           , <&macro_tap &kp GT>
+          , <&macro_tap &kp SPACE>
           ;
       };
     };
