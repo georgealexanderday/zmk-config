@@ -167,7 +167,7 @@ ZMK_BEHAVIOR(dot_spc, macro,
           &tdq        &kp W       &kp F       &kp P       &kp B     &kp J &kp L       &kp U       &kp Y       &kp SQT
           &lh_pht LSHFT A &lh_pht LCTRL R  &lh_pht LALT S  &lh_pht LGUI T &kp G     &kp M &rh_pht RGUI N  &rh_pht RALT E  &rh_pht RCTRL I &rh_pht RSHFT O
           &kp Z       &kp X       &kp C       &kp D       &tdv     &kp K &kp H       &comma_morph   &dot_morph     &qexcl
-                      &kp HYPER &kp TAB &lt_spc LOWER                       &lt RAISE BKSP &kp RET &kp MEH
+                      &kp HYPER &kp TAB &lt_spc LOWER 0                      &lt RAISE BKSP &kp RET &kp MEH
         >;
       };
 
