@@ -33,6 +33,15 @@ ZMK_BEHAVIOR(dot_inner_morph, mod_morph,
     bindings = <&kp COLON>, <&kp GREATER_THAN>;
     mods = <(MOD_LCTL|MOD_RCTL)>;
 )
+// tap: single quote | shift + tap: double_quote | ctrl + shift + tap: backtick
+ZMK_BEHAVIOR(quote_morph, mod_morph,
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+    bindings = <&kp SQT>, <&quote_inner_morph>;
+)
+ZMK_BEHAVIOR(quote_inner_morph, mod_morph,
+    bindings = <&kp DQT>, <&kp GRAVE>;
+    mods = <(MOD_LCTL|MOD_RCTL)>;
+)
 
 // tap: qmark | shift + tap: excl
 ZMK_BEHAVIOR(qexcl, mod_morph,
@@ -148,7 +157,7 @@ ZMK_BEHAVIOR(qexcl, mod_morph,
       default_layer {
         label = "UwU";
         bindings = <
-          &tdq        &kp W       &kp F       &kp P       &kp B     &kp J &kp L       &kp U       &kp Y       &kp SQT
+          &tdq        &kp W       &kp F       &kp P       &kp B     &kp J &kp L       &kp U       &kp Y       &quote_morph
           &lh_pht LSHFT A &lh_pht LCTRL R  &lh_pht LALT S  &lh_pht LGUI T &kp G     &kp M &rh_pht RGUI N  &rh_pht RALT E  &rh_pht RCTRL I &rh_pht RSHFT O
           &kp Z       &kp X       &kp C       &kp D       &tdv     &kp K &kp H       &comma_morph   &dot_morph     &qexcl
                       &kp HYPER &kp TAB &lt LOWER SPACE                      &lt RAISE BKSP &kp RET &kp MEH
