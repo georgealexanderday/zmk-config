@@ -89,9 +89,9 @@ ZMK_BEHAVIOR(dot_spc, macro,
           ;
       };
 
-      la: left_arrow {
+      ra: right_arrow {
         compatible = "zmk,behavior-macro";
-        label = "LEFT_ARROW";
+        label = "RIGHT_ARROW";
         #binding-cells = <0>;
         bindings
           = <&macro_tap &kp MINUS>
@@ -114,7 +114,7 @@ ZMK_BEHAVIOR(dot_spc, macro,
         hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 30 31 32 33 34 35>;
         hold-trigger-on-release;
       };
-      rh_pht: riht_hand_positional_hold_tap {
+      rh_pht: right_hand_positional_hold_tap {
         compatible = "zmk,behavior-hold-tap";
         label = "RIGHT_POSITIONAL_TAP";
         #binding-cells = <2>;
@@ -134,6 +134,15 @@ ZMK_BEHAVIOR(dot_spc, macro,
         tapping-term-ms = <200>;
         bindings = <&kp V>, <&pastey>;
       };
+
+      quote: mod_morph_quote {
+        compatible = "zmk,behavior-mod-morph";
+        label = "MOD_MORPH_QUOTE";
+        #binding-cells = <0>;
+        bindings = <&kp SQT>, <&kp GRAVE>;
+        mods = <(MOD_LSFT|MOD_LCTL)>;
+      };
+      };
     };
 
 
@@ -144,7 +153,7 @@ ZMK_BEHAVIOR(dot_spc, macro,
       default_layer {
         label = "UwU";
         bindings = <
-          &kp Q           &kp W           &kp F           &kp P           &kp B     &kp J &kp L           &kp U           &kp Y           &trans
+          &kp Q           &kp W           &kp F           &kp P           &kp B     &kp J &kp L           &kp U           &kp Y           &quote
           &lh_pht LSHFT A &lh_pht LCTRL R &lh_pht LALT S  &lh_pht LGUI T  &kp G     &kp M &rh_pht RGUI N  &rh_pht RALT E  &rh_pht RCTRL I &rh_pht RSHFT O
           &kp Z           &kp X           &kp C           &kp D           &tdv      &kp K &kp H           &comma_morph    &dot_morph      &qexcl
                           &kp HYPER &kp TAB &lt_spc RAISE 0                         &lt LOWER BKSP &kp RET &kp MEH
@@ -156,7 +165,7 @@ ZMK_BEHAVIOR(dot_spc, macro,
         bindings = <
           &trans    &kp PERCENT &kp LBRC  &kp RBRC &trans           &trans      &kp AMPS  &kp PIPE  &kp HASH  &trans
           &kp ESC   &kp BSLH    &kp LPAR  &kp RPAR &kp CARET        &kp DOLLAR  &kp MINUS &kp UNDER &kp FSLH  &kp EQUAL 
-          &kp TILDE &trans      &kp LBKT  &kp RBKT &trans           &trans      &kp AT    &trans    &la       &caps_word
+          &kp TILDE &trans      &kp LBKT  &kp RBKT &trans           &trans      &kp AT    &trans    &ra       &caps_word
                     &trans      &trans    &trans                                &trans    &trans    &trans 
         >;
       };
