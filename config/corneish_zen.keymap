@@ -4,8 +4,8 @@
 #include "../zmk-nodefree-config/helper.h"
 
 #define DEF 0
-#define SYMBOL 1
-#define NAVNUM 2
+#define LOWER 1
+#define RAISE 2
 
 #define HYPER LS(LC(LA(LGUI)))
 #define MEH LS(LC(LALT))
