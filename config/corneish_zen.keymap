@@ -142,7 +142,6 @@ ZMK_BEHAVIOR(dot_spc, macro,
         bindings = <&kp SQT>, <&kp GRAVE>;
         mods = <(MOD_LSFT|MOD_LCTL)>;
       };
-      };
     };
 
 
