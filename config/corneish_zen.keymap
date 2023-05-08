@@ -4,8 +4,10 @@
 #include "../zmk-nodefree-config/helper.h"
 
 #define DEF 0
-#define LOWER 1
-#define RAISE 2
+#define SYMBOL 1
+#define NAVNUM 2
+#define NUM 3
+#define ADJUST 4
 
 #define HYPER LS(LC(LA(LGUI)))
 #define MEH LS(LC(LALT))
@@ -33,13 +35,13 @@ ZMK_BEHAVIOR(dot_inner_morph, mod_morph,
     bindings = <&kp COLON>, <&kp GREATER_THAN>;
     mods = <(MOD_LCTL|MOD_RCTL)>;
 )
-// tap: single quote | shift + tap: double_quote | ctrl + shift + tap: backtick
+// tap: single quote | shift + tap: double_quote | ctrl + shift + tap: backtick doesn't work due to grave
 ZMK_BEHAVIOR(quote_morph, mod_morph,
     mods = <(MOD_LSFT|MOD_RSFT)>;
     bindings = <&kp SQT>, <&quote_inner_morph>;
 )
 ZMK_BEHAVIOR(quote_inner_morph, mod_morph,
-    bindings = <&kp DQT>, <&kp GRAVE_ACCENT>;
+    bindings = <&kp DQT>, <&kp GRAVE>; 
     mods = <(MOD_LCTL|MOD_RCTL)>;
 )
 
@@ -65,7 +67,6 @@ ZMK_BEHAVIOR(dot_spc, macro,
     tap-ms = <5>;
     bindings = <&kp DOT &kp SPACE &sk LSHFT>;
 )
-
 
 
 / {
@@ -165,6 +166,14 @@ ZMK_BEHAVIOR(dot_spc, macro,
         quick-release;
         ignore-modifiers;
       };
+
+      quotes: quotes {
+        compatible = "zmk,behaviour-mod-morph";
+        label = "QUOTES";
+        #binding-cells = <0>;
+        bindings = <&kp SQT>, <&kp GRAVE>;
+        mods = <(MOD_LCTL|MOD_LSFT)>;
+      };
     };
 
 
@@ -174,19 +183,19 @@ ZMK_BEHAVIOR(dot_spc, macro,
       default_layer {
         label = "UwU";
         bindings = <
-          &tdq        &kp W       &kp F       &kp P       &kp B     &kp J &kp L       &kp U       &kp Y       &quote_morph
+          &tdq        &kp W       &kp F       &kp P       &kp B     &kp J &kp L       &kp U       &kp Y       &quotes
           &lh_pht LSHFT A &lh_pht LCTRL R  &lh_pht LALT S  &lh_pht LGUI T &kp G     &kp M &rh_pht RGUI N  &rh_pht RALT E  &rh_pht RCTRL I &rh_pht RSHFT O
           &kp Z       &kp X       &kp C       &kp D       &tdv     &kp K &kp H       &comma_morph   &dot_morph     &qexcl
-                      &kp HYPER &kp TAB &lt_spc LOWER                      &lt RAISE BKSP &kp RET &kp MEH
+                      &kp HYPER &kp TAB &lt_spc NAVNUM                      &lt SYMBOL BKSP &kp RET &kp MEH
         >;
       };
 
       lower_layer {
         label = "lower";
         bindings = <
-          &kp GRAVE &kp PERCENT &kp LBRC  &kp RBRC &trans           &trans      &kp AMPS  &kp PIPE  &kp HASH  &kp SEMI
-          &kp ESC &kp BSLH    &kp LPAR  &kp RPAR &kp CARET        &kp DOLLAR  &kp MINUS &kp COLON &kp UNDER &kp EQUAL 
-          &kp TILDE &trans      &kp LBKT  &kp RBKT &trans           &trans      &kp EXCL  &kp AT    &la    &caps_word
+          &trans &kp PERCENT &kp LBRC  &kp RBRC &trans           &trans      &kp AMPS  &kp PIPE  &kp HASH  &trans
+          &kp ESC &kp BSLH    &kp LPAR  &kp RPAR &kp CARET        &kp DOLLAR  &kp MINUS &kp UNDER &kp FSLH &kp EQUAL 
+          &kp TILDE &trans      &kp LBKT  &kp RBKT &trans           &trans      &kp AT  &trans &la    &caps_word
                     &trans      &trans    &trans                                &trans    &trans    &trans 
         >;
       };
