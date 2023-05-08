@@ -157,7 +157,7 @@ ZMK_BEHAVIOR(dot_spc, macro,
       };
 
       quotes: quotes {
-        compatible = "zmk,behaviour-mod-morph";
+        compatible = "zmk,behavior-mod-morph";
         label = "QUOTES";
         #binding-cells = <0>;
         bindings = <&kp SQT>, <&kp GRAVE>;
