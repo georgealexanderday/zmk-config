@@ -140,7 +140,7 @@ ZMK_BEHAVIOR(dot_spc, macro,
         label = "MOD_MORPH_QUOTE";
         #binding-cells = <0>;
         bindings = <&kp SQT>, <&kp GRAVE>;
-        mods = <(MOD_LSFT|MOD_LCTL)>;
+        mods = <(MOD_LCTL)>;
       };
     };
 
