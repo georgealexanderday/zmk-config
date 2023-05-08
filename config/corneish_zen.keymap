@@ -95,9 +95,7 @@ ZMK_BEHAVIOR(dot_spc, macro,
         label = "PASTEY";
         #binding-cells = <0>;
         bindings
-          = <&macro_press &kp LGUI>
-          , <&macro_tap &kp V>
-          , <&macro_release &kp LGUI>
+          = <&macro_tap &kp K_PASTE>
           , <&macro_tap &kp RET>
           ;
       };
