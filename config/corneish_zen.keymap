@@ -134,6 +134,7 @@ ZMK_BEHAVIOR(dot_spc, macro,
         tapping-term-ms = <200>;
         bindings = <&kp V>, <&pastey>;
       };
+    };
 
 
 
