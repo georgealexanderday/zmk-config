@@ -6,8 +6,6 @@
 #define DEF 0
 #define SYMBOL 1
 #define NAVNUM 2
-#define NUM 3
-#define ADJUST 4
 
 #define HYPER LS(LC(LA(LGUI)))
 #define MEH LS(LC(LALT))
@@ -129,31 +127,12 @@ ZMK_BEHAVIOR(dot_spc, macro,
         hold-trigger-on-release;
       };
 
-      tdq: tap_dance_q {
-        compatible = "zmk,behavior-tap-dance";
-        label = "TAP_DANCE_Q";
-        #binding-cells = <0>;
-        tapping-term-ms = <200>;
-        bindings = <&kp Q>, <&kp ESC>;
-      };
-
-
       tdv: tap_dance_v {
         compatible = "zmk,behavior-tap-dance";
         label = "TAP_DANCE_V";
         #binding-cells = <0>;
         tapping-term-ms = <200>;
         bindings = <&kp V>, <&pastey>;
-      };
-
-      skq: sticky_key_quick_release {
-        compatible = "zmk,behavior-sticky-key";
-        label = "STICKY_KEY_QUICK_RELEASE";
-        #binding-cells = <1>;
-        bindings = <&kp>;
-        release-after-ms = <400>;
-        quick-release;
-        ignore-modifiers;
       };
 
       quotes: quotes {
@@ -172,19 +151,19 @@ ZMK_BEHAVIOR(dot_spc, macro,
       default_layer {
         label = "UwU";
         bindings = <
-          &tdq        &kp W       &kp F       &kp P       &kp B     &kp J &kp L       &kp U       &kp Y       &quotes
-          &lh_pht LSHFT A &lh_pht LCTRL R  &lh_pht LALT S  &lh_pht LGUI T &kp G     &kp M &rh_pht RGUI N  &rh_pht RALT E  &rh_pht RCTRL I &rh_pht RSHFT O
-          &kp Z       &kp X       &kp C       &kp D       &tdv     &kp K &kp H       &comma_morph   &dot_morph     &qexcl
-                      &kp HYPER &kp TAB &lt_spc NAVNUM                      &lt SYMBOL BKSP &kp RET &kp MEH
+          &tdq            &kp W           &kp F           &kp P           &kp B     &kp J &kp L           &kp U           &kp Y           &quotes
+          &lh_pht LSHFT A &lh_pht LCTRL R &lh_pht LALT S  &lh_pht LGUI T  &kp G     &kp M &rh_pht RGUI N  &rh_pht RALT E  &rh_pht RCTRL I &rh_pht RSHFT O
+          &kp Z           &kp X           &kp C           &kp D           &tdv      &kp K &kp H           &comma_morph    &dot_morph      &qexcl
+                          &kp HYPER &kp TAB &lt_spc NAVNUM                          &lt SYMBOL BKSP &kp RET &kp MEH
         >;
       };
 
       lower_layer {
         label = "lower";
         bindings = <
-          &trans &kp PERCENT &kp LBRC  &kp RBRC &trans           &trans      &kp AMPS  &kp PIPE  &kp HASH  &trans
-          &kp ESC &kp BSLH    &kp LPAR  &kp RPAR &kp CARET        &kp DOLLAR  &kp MINUS &kp UNDER &kp FSLH &kp EQUAL 
-          &kp TILDE &trans      &kp LBKT  &kp RBKT &trans           &trans      &kp AT  &trans &la    &caps_word
+          &trans    &kp PERCENT &kp LBRC  &kp RBRC &trans           &trans      &kp AMPS  &kp PIPE  &kp HASH  &trans
+          &kp ESC   &kp BSLH    &kp LPAR  &kp RPAR &kp CARET        &kp DOLLAR  &kp MINUS &kp UNDER &kp FSLH  &kp EQUAL 
+          &kp TILDE &trans      &kp LBKT  &kp RBKT &trans           &trans      &kp AT    &trans    &la       &caps_word
                     &trans      &trans    &trans                                &trans    &trans    &trans 
         >;
       };
@@ -192,10 +171,10 @@ ZMK_BEHAVIOR(dot_spc, macro,
       raise_layer {
         label = "raise";
         bindings = <
-          &kp FSLH  &kp N7  &kp N8  &kp N9  &kp STAR               &trans  &bt BT_PRV &bt BT_NXT &trans &bt BT_CLR 
-          &kp N0    &kp N4  &kp N5  &kp N6  &kp PLUS               &trans  &kp LEFT  &kp DOWN  &kp UP &kp RIGHT
-          &kp EQUAL &kp N1  &kp N2  &kp N3  &kp MINUS                &trans  &trans    &trans    &trans &trans 
-                    &trans  &trans  &trans                                  &trans    &trans    &trans 
+          &kp FSLH  &kp N7  &kp N8  &kp N9  &kp STAR                &trans  &bt BT_PRV  &bt BT_NXT  &trans &bt BT_CLR 
+          &kp N0    &kp N4  &kp N5  &kp N6  &kp PLUS                &trans  &kp LEFT    &kp DOWN    &kp UP &kp RIGHT
+          &kp EQUAL &kp N1  &kp N2  &kp N3  &kp MINUS               &trans  &trans      &trans      &trans &trans 
+                    &trans  &trans  &trans                                  &trans      &trans      &trans 
         >;
       };
   };
