@@ -174,7 +174,6 @@ ZMK_BEHAVIOR(dot_spc, macro,
     };
     
 
-
     keymap {
       compatible = "zmk,keymap";
 
