@@ -160,6 +160,20 @@
         bindings = <&kp SLASH>, <&kp EXCL>;
         mods = <(MOD_LCTL)>;
       };
+      comma_morph: mod_morph_comma {
+        compatible = "zmk,behavior-mod-morph";
+        label = "MOD_MORPH_SLASH";
+        #binding-cells = <0>;
+        bindings = <&kp COMMA>, <&kp SEMI>;
+        mods = <(MOD_LSFT)>;
+      };
+      dot_morph: mod_morph_dot {
+        compatible = "zmk,behavior-mod-morph";
+        label = "MOD_MORPH_SLASH";
+        #binding-cells = <0>;
+        bindings = <&kp DOT>, <&kp COLON>;
+        mods = <(MOD_LSFT)>;
+      };
     };
     
 
