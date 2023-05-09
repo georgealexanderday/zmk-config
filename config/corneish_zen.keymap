@@ -75,13 +75,28 @@ ZMK_BEHAVIOR(dot_spc, macro,
         };
         combo_dash {
             timeout-ms = <20>;
-            key-positions = <16 17>;
+            key-positions = <16 18>;
             bindings = <&kp MINUS>;
         };
         combo_underscore {
             timeout-ms = <20>;
-            key-positions = <16 18>;
+            key-positions = <16 17>;
             bindings = <&kp UNDERSCORE>;
+        };
+        combo_colon {
+            timeout-ms = <20>;
+            key-positions = <17 18>;
+            bindings = <&kp UNDERSCORE>;
+        };
+        combo_left_bracket {
+            timeout-ms = <20>;
+            key-positions = <11 13>;
+            bindings = <&kp LEFT_BRACKET>;
+        };
+        combo_right_bracket {
+            timeout-ms = <20>;
+            key-positions = <12 13>;
+            bindings = <&kp RIGHT_BRACKET>;
         };
     };
 };
@@ -183,7 +198,7 @@ ZMK_BEHAVIOR(dot_spc, macro,
           &kp Q           &kp W           &kp F           &kp P           &kp B     &kp J &kp L           &kp U           &kp Y           &quote
           &lh_pht LSHFT A &lh_pht LCTRL R &lh_pht LALT S  &lh_pht LGUI T  &kp G     &kp M &rh_pht RGUI N  &rh_pht RALT E  &rh_pht RCTRL I &rh_pht RSHFT O
           &kp Z           &kp X           &kp C           &kp D           &tdv      &kp K &kp H           &comma_morph    &dot_morph      &slash
-                          &kp HYPER &kp TAB &lt_spc RAISE 0                         &lt LOWER BKSP &kp RET &kp MEH
+                          &kp HYPER &kp TAB &lt RAISE SPACE                         &lt LOWER BKSP &kp RET &kp MEH
         >;
       };
 
