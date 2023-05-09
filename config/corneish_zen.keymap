@@ -116,7 +116,7 @@
         compatible = "zmk,behavior-hold-tap";
         label = "LEFT_POSITIONAL_TAP";
         #binding-cells = <2>;
-        tapping-term-ms = <TAPPING_TERM_MS;
+        tapping-term-ms = <TAPPING_TERM_MS>;
         quick-tap-ms = <QUICK_TAP_MS>;
         flavor = "balanced";
         global-quick-tap-ms = <GLOBAL_QUICK_TAP_MS>;
