@@ -91,12 +91,12 @@ ZMK_BEHAVIOR(dot_spc, macro,
         combo_left_bracket {
             timeout-ms = <20>;
             key-positions = <11 13>;
-            bindings = <&kp LPAR>;
+            bindings = <&kp RPAR>;
         };
         combo_right_bracket {
             timeout-ms = <20>;
             key-positions = <12 13>;
-            bindings = <&kp RPAR>;
+            bindings = <&kp LPAR>;
         };
     };
 };
