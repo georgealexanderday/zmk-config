@@ -69,9 +69,30 @@ ZMK_BEHAVIOR(dot_spc, macro,
     combos {
         compatible = "zmk,combos";
         combo_esc {
-            timeout-ms = <50>;
+            timeout-ms = <20>;
             key-positions = <1 2>;
             bindings = <&kp ESC>;
+        };
+        combo_dash {
+            timeout-ms = <20>;
+            key-positions = <16 17>;
+            bindings = <&kp MINUS>;
+        };
+        combo_underscore {
+            timeout-ms = <20>;
+            key-positions = <16 18>;
+            bindings = <&kp UNDERSCORE>;
+        };
+    };
+};
+
+
+/ {
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        tri_layer {
+            if-layers = <1 2>;
+            then-layer = <3>;
         };
     };
 };
@@ -142,8 +163,15 @@ ZMK_BEHAVIOR(dot_spc, macro,
         bindings = <&kp SQT>, <&kp GRAVE>;
         mods = <(MOD_LCTL)>;
       };
-    };
 
+      slash: mod_morph_slash {
+        compatible = "zmk,behavior-mod-morph";
+        label = "MOD_MORPH_SLASH";
+        #binding-cells = <0>;
+        bindings = <&kp SLASH>, <&kp EXCL>;
+        mods = <(MOD_LCTL)>;
+      };
+    };
 
 
     keymap {
@@ -154,7 +182,7 @@ ZMK_BEHAVIOR(dot_spc, macro,
         bindings = <
           &kp Q           &kp W           &kp F           &kp P           &kp B     &kp J &kp L           &kp U           &kp Y           &quote
           &lh_pht LSHFT A &lh_pht LCTRL R &lh_pht LALT S  &lh_pht LGUI T  &kp G     &kp M &rh_pht RGUI N  &rh_pht RALT E  &rh_pht RCTRL I &rh_pht RSHFT O
-          &kp Z           &kp X           &kp C           &kp D           &tdv      &kp K &kp H           &comma_morph    &dot_morph      &qexcl
+          &kp Z           &kp X           &kp C           &kp D           &tdv      &kp K &kp H           &comma_morph    &dot_morph      &slash
                           &kp HYPER &kp TAB &lt_spc RAISE 0                         &lt LOWER BKSP &kp RET &kp MEH
         >;
       };
@@ -164,7 +192,7 @@ ZMK_BEHAVIOR(dot_spc, macro,
         bindings = <
           &trans    &kp PERCENT &kp LBRC  &kp RBRC &trans           &trans      &kp AMPS  &kp PIPE  &kp HASH  &trans
           &kp ESC   &kp BSLH    &kp LPAR  &kp RPAR &kp CARET        &kp DOLLAR  &kp MINUS &kp UNDER &kp FSLH  &kp EQUAL 
-          &kp TILDE &trans      &kp LBKT  &kp RBKT &trans           &trans      &kp AT    &trans    &ra       &caps_word
+          &kp TILDE &trans      &kp LBKT  &kp RBKT &trans           &trans      &kp AT    &kp LESS_THAN    &kp GREATER_THAN       &caps_word
                     &trans      &trans    &trans                                &trans    &trans    &trans 
         >;
       };
@@ -172,9 +200,19 @@ ZMK_BEHAVIOR(dot_spc, macro,
       raise_layer {
         label = "raise";
         bindings = <
-          &kp FSLH  &kp N7  &kp N8  &kp N9  &kp STAR                &trans  &bt BT_PRV  &bt BT_NXT  &trans &bt BT_CLR 
+          &kp FSLH  &kp N7  &kp N8  &kp N9  &kp STAR                &trans  &trans &trans &trans &trans
           &kp N0    &kp N4  &kp N5  &kp N6  &kp PLUS                &trans  &kp LEFT    &kp DOWN    &kp UP &kp RIGHT
           &kp EQUAL &kp N1  &kp N2  &kp N3  &kp MINUS               &trans  &trans      &trans      &trans &trans 
+                    &trans  &trans  &trans                                  &trans      &trans      &trans 
+        >;
+      };
+
+      adjust_layer {
+        label = "adjust";
+        bindings = <
+          &trans &trans &trans &trans &trans                &trans  &bt BT_PRV  &bt BT_NXT  &trans &bt BT_CLR 
+          &trans  &trans &trans &trans &trans &trans &trans &trans &trans &trans 
+          &trans  &trans &trans &trans &trans &trans &trans &trans &trans &trans 
                     &trans  &trans  &trans                                  &trans      &trans      &trans 
         >;
       };
