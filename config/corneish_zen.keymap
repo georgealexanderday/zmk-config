@@ -121,7 +121,7 @@
         flavor = "balanced";
         global-quick-tap-ms = <GLOBAL_QUICK_TAP_MS>;
         bindings = <&kp>, <&kp>;
-        hold-trigger-key-positions = <KEYS_R THUMBS>
+        hold-trigger-key-positions = <KEYS_R THUMBS>;
         hold-trigger-on-release;
       };
       rh_pht: right_hand_positional_hold_tap {
@@ -181,7 +181,7 @@
         bindings = <
           &trans    &kp STAR &kp LBRC  &kp RBRC &trans           &trans      &kp AMPS  &kp PIPE  &kp PLUS  &trans
           &kp TILDE   &kp PERCENT    &kp LPAR  &kp RPAR &kp CARET        &kp DOLLAR  &kp UNDER &kp MINUS &kp HASH  &kp EQUAL 
-          &trans &kp BSLH      &kp LBKT  &kp RBKT &trans           &trans      &kp AT    &kp LESS_THAN    &kp GREATER_THAN       &caps_word
+          &kp BSLH &trans      &kp LBKT  &kp RBKT &trans           &trans      &kp AT    &kp LESS_THAN    &kp GREATER_THAN       &caps_word
                     &trans      &trans    &trans                                &trans    &trans    &trans 
         >;
       };
