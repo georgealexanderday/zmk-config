@@ -86,17 +86,17 @@ ZMK_BEHAVIOR(dot_spc, macro,
         combo_colon {
             timeout-ms = <20>;
             key-positions = <17 18>;
-            bindings = <&kp UNDERSCORE>;
+            bindings = <&kp COLON>;
         };
         combo_left_bracket {
             timeout-ms = <20>;
             key-positions = <11 13>;
-            bindings = <&kp LEFT_BRACKET>;
+            bindings = <&kp LPAR>;
         };
         combo_right_bracket {
             timeout-ms = <20>;
             key-positions = <12 13>;
-            bindings = <&kp RIGHT_BRACKET>;
+            bindings = <&kp RPAR>;
         };
     };
 };
