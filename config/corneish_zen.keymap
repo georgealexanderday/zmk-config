@@ -104,6 +104,19 @@
           , <&macro_tap &kp SPACE>
           ;
       };
+      prompt: prompt {
+        compatible = "zmk,behavior-macro";
+        label = "PROMPT";
+        #binding-cells = <0>;
+        bindings
+          = <&macro_tap &kp GRAVE &kp GRAVE &kp GRAVE>
+          , <&macro_press &kp LSHIFT>
+          , <&macro_tap &kp RET &kp RET>
+          , <&macro_release &kp LSHIFT>
+          , <&macro_tap &kp GRAVE &kp GRAVE &kp GRAVE>
+          , <&macro-tap &kp UP>
+          ;
+      };
     };
 
     behaviors {
@@ -188,7 +201,7 @@
       lower_layer {
         label = "lower";
         bindings = <
-          &trans      &kp STAR     &kp LBRC  &kp RBRC &trans           &trans      &kp AMPS  &kp PIPE        &kp PLUS          &kp GRAVE
+          &prompt     &kp STAR     &kp LBRC  &kp RBRC &trans           &trans      &kp AMPS  &kp PIPE        &kp PLUS          &kp GRAVE
           &kp TILDE   &kp PERCENT  &kp LPAR  &kp RPAR &kp CARET        &kp DOLLAR  &kp MINUS &kp UNDER       &kp HASH          &kp EQUAL 
           &kp BSLH    &trans       &kp LBKT  &kp RBKT &trans           &trans      &kp AT    &kp LESS_THAN   &kp GREATER_THAN  &caps_word
                     &trans      &trans    &trans                                &trans    &trans    &trans 
