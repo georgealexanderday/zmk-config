@@ -16,6 +16,12 @@
 #define HYPER LS(LC(LA(LGUI)))
 #define MEH LS(LC(LALT))
 
+#define U_RDO LS(LG(Z))
+#define U_PST LG(V)
+#define U_CPY LG(C)
+#define U_CUT LG(X)
+#define U_UND LG(Z)
+
 #define TAPPING_TERM_MS 280
 #define QUICK_TAP_MS 175
 #define GLOBAL_QUICK_TAP_MS 150
@@ -44,37 +50,26 @@
         compatible = "zmk,combos";
         combo_esc {
             timeout-ms = <20>;
-            key-positions = <1 2>;
+            key-positions = <12 13>;
             bindings = <&kp ESC>;
         };
         combo_dash {
             timeout-ms = <20>;
-            key-positions = <16 18>;
+            key-positions = <16 17>;
             bindings = <&kp MINUS>;
         };
         combo_underscore {
             timeout-ms = <20>;
-            key-positions = <16 17>;
+            key-positions = <17 18>;
             bindings = <&kp UNDERSCORE>;
         };
         combo_colon {
             timeout-ms = <20>;
-            key-positions = <17 18>;
+            key-positions = <16 18>;
             bindings = <&kp COLON>;
-        };
-        combo_right_bracket {
-            timeout-ms = <20>;
-            key-positions = <11 13>;
-            bindings = <&kp RPAR>;
-        };
-        combo_left_bracket {
-            timeout-ms = <20>;
-            key-positions = <12 13>;
-            bindings = <&kp LPAR>;
         };
     };
 };
-
 
 / {
     conditional_layers {
@@ -107,6 +102,21 @@
           = <&macro_tap &kp MINUS>
           , <&macro_tap &kp GT>
           , <&macro_tap &kp SPACE>
+          ;
+      };
+      prompt: prompt {
+        compatible = "zmk,behavior-macro";
+        label = "PROMPT";
+        #binding-cells = <0>;
+        wait-ms = <40>;
+        tap-ms = <40>;
+        bindings
+          = <&macro_tap &kp GRAVE &kp GRAVE &kp GRAVE>
+          , <&macro_press &kp LSHIFT>
+          , <&macro_tap &kp RET &kp RET>
+          , <&macro_release &kp LSHIFT>
+          , <&macro_tap &kp GRAVE &kp GRAVE &kp GRAVE>
+          , <&macro_tap &kp UP>
           ;
       };
     };
@@ -193,9 +203,9 @@
       lower_layer {
         label = "lower";
         bindings = <
-          &trans    &kp STAR &kp LBRC  &kp RBRC &trans           &trans      &kp AMPS  &kp PIPE  &kp PLUS  &trans
-          &kp TILDE   &kp PERCENT    &kp LPAR  &kp RPAR &kp CARET        &kp DOLLAR  &kp UNDER &kp MINUS &kp HASH  &kp EQUAL 
-          &kp BSLH &trans      &kp LBKT  &kp RBKT &trans           &trans      &kp AT    &kp LESS_THAN    &kp GREATER_THAN       &caps_word
+          &prompt     &kp STAR     &kp LBRC  &kp RBRC &trans           &trans      &kp AMPS  &kp PIPE        &kp PLUS          &kp GRAVE
+          &kp TILDE   &kp PERCENT  &kp LPAR  &kp RPAR &kp CARET        &kp DOLLAR  &kp MINUS &kp UNDER       &kp HASH          &kp EQUAL 
+          &kp BSLH    &trans       &kp LBKT  &kp RBKT &trans           &trans      &kp AT    &kp LESS_THAN   &kp GREATER_THAN  &caps_word
                     &trans      &trans    &trans                                &trans    &trans    &trans 
         >;
       };
@@ -203,19 +213,19 @@
       raise_layer {
         label = "raise";
         bindings = <
-          &trans  &kp N7  &kp N8  &kp N9  &trans                &trans  &trans &trans &trans &trans
-          &kp ESC    &kp N4  &kp N5  &kp N6  &trans                &trans  &kp LEFT    &kp DOWN    &kp UP &kp RIGHT
-          &kp N0 &kp N1  &kp N2  &kp N3  &trans              &trans  &trans      &trans      &trans &trans 
-                    &trans  &trans  &trans                                  &trans      &trans      &trans 
+          &trans   &kp N7  &kp N8  &kp N9  &trans                &kp U_RDO  &kp U_PST   &kp U_CPY    &kp U_CUT  &kp U_UND
+          &kp ESC  &kp N4  &kp N5  &kp N6  &trans                &trans     &kp LEFT    &kp DOWN     &kp UP     &kp RIGHT
+          &kp N0   &kp N1  &kp N2  &kp N3  &trans                &trans     &kp HOME    &kp PG_DN    &kp PG_UP  &kp END 
+                    &trans  &trans  &trans                                  &kp DEL      &trans      &trans 
         >;
       };
 
       adjust_layer {
         label = "adjust";
         bindings = <
-          &trans &trans &trans &trans &trans                &trans  &bt BT_PRV  &bt BT_NXT  &trans &bt BT_CLR 
-          &trans  &trans &trans &trans &trans               &trans &trans &trans &trans &trans 
-          &trans  &trans &trans &trans &trans               &trans &trans &trans &trans &trans 
+          &kp F12  &kp F7 &kp F8 &kp F9 &trans                &trans  &bt BT_PRV  &bt BT_NXT  &trans &bt BT_CLR 
+          &kp F11  &kp F4 &kp F5 &kp F6 &trans               &trans &trans &trans &trans &trans 
+          &kp F10  &kp F1 &kp F2 &kp F3 &trans               &trans &trans &trans &trans &trans 
                     &trans  &trans  &trans                                  &trans      &trans      &trans 
         >;
       };
