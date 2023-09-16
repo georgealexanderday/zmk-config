@@ -163,13 +163,14 @@
         mods = <(MOD_LCTL)>;
       };
 
-      slash: mod_morph_slash {
+      qmark: mod_morph_qmark {
         compatible = "zmk,behavior-mod-morph";
-        label = "MOD_MORPH_SLASH";
+        label = "MOD_MORPH_QMARK";
         #binding-cells = <0>;
-        bindings = <&kp SLASH>, <&kp EXCL>;
-        mods = <(MOD_LCTL)>;
+        bindings = <&kp QMARK>, <&kp EXCL>;
+        mods = <(MOD_LSFT)>;
       };
+
       comma_morph: mod_morph_comma {
         compatible = "zmk,behavior-mod-morph";
         label = "MOD_MORPH_COMMA";
@@ -189,14 +190,13 @@
 
     keymap {
       compatible = "zmk,keymap";
-
       default_layer {
         label = "UwU";
         bindings = <
           &kp Q           &kp W           &kp F           &kp P           &kp B     &kp J &kp L           &kp U           &kp Y           &quote
           &lh_pht LSHFT A &lh_pht LCTRL R &lh_pht LALT S  &lh_pht LGUI T  &kp G     &kp M &rh_pht RGUI N  &rh_pht RALT E  &rh_pht RCTRL I &rh_pht RSHFT O
-          &kp Z           &kp X           &kp C           &kp D           &tdv      &kp K &kp H           &comma_morph    &dot_morph      &slash
-                          &kp HYPER &kp TAB &lt RAISE SPACE                         &lt LOWER BKSP &kp RET &kp MEH
+          &kp Z           &kp X           &kp C           &kp D           &tdv      &kp K &kp H           &comma_morph    &dot_morph      &qmark
+                          &kp HYPER &kp TAB &lt RAISE SPACE                         &lt LOWER BKSP &mt LSHIFT RET &kp MEH
         >;
       };
 
@@ -205,7 +205,7 @@
         bindings = <
           &prompt     &kp STAR     &kp LBRC  &kp RBRC &trans           &trans      &kp AMPS  &kp PIPE        &kp PLUS          &kp GRAVE
           &kp TILDE   &kp PERCENT  &kp LPAR  &kp RPAR &kp CARET        &kp DOLLAR  &kp MINUS &kp UNDER       &kp HASH          &kp EQUAL 
-          &kp BSLH    &trans       &kp LBKT  &kp RBKT &trans           &trans      &kp AT    &kp LESS_THAN   &kp GREATER_THAN  &caps_word
+          &kp BSLH    &trans       &kp LBKT  &kp RBKT &trans           &trans      &kp AT    &kp LESS_THAN   &kp GREATER_THAN  &kp SLASH
                     &trans      &trans    &trans                                &trans    &trans    &trans 
         >;
       };
@@ -216,7 +216,7 @@
           &trans   &kp N7  &kp N8  &kp N9  &trans                &kp U_RDO  &kp U_PST   &kp U_CPY    &kp U_CUT  &kp U_UND
           &kp ESC  &kp N4  &kp N5  &kp N6  &trans                &trans     &kp LEFT    &kp DOWN     &kp UP     &kp RIGHT
           &kp N0   &kp N1  &kp N2  &kp N3  &trans                &trans     &kp HOME    &kp PG_DN    &kp PG_UP  &kp END 
-                    &trans  &trans  &trans                                  &kp DEL      &trans      &trans 
+                    &trans  &trans  &trans                                  &kp DEL      &caps_word      &trans 
         >;
       };
 
