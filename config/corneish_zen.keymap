@@ -24,7 +24,7 @@
 
 #define TAPPING_TERM_MS 280
 #define QUICK_TAP_MS 175
-#define GLOBAL_QUICK_TAP_MS 150
+#define REQUIRE-PRIOR-IDLE-MS 150
 
 
 &caps_word {
@@ -129,7 +129,7 @@
         tapping-term-ms = <TAPPING_TERM_MS>;
         quick-tap-ms = <QUICK_TAP_MS>;
         flavor = "balanced";
-        global-quick-tap-ms = <GLOBAL_QUICK_TAP_MS>;
+        require-prior-idle-ms = <REQUIRE-PRIOR-IDLE-MS>;
         bindings = <&kp>, <&kp>;
         hold-trigger-key-positions = <KEYS_R THUMBS>;
         hold-trigger-on-release;
@@ -141,7 +141,7 @@
         tapping-term-ms = <TAPPING_TERM_MS>;
         quick-tap-ms = <QUICK_TAP_MS>;
         flavor = "balanced";
-        global-quick-tap-ms = <GLOBAL_QUICK_TAP_MS>;
+        require-prior-idle-ms = <REQUIRE-PRIOR-IDLE-MS>;
         bindings = <&kp>, <&kp>;
         hold-trigger-key-positions = <KEYS_L THUMBS>;
         hold-trigger-on-release;
