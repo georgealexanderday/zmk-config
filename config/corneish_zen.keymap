@@ -186,8 +186,6 @@
         mods = <(MOD_LSFT)>;
       };
     };
-    
-
     keymap {
       compatible = "zmk,keymap";
       default_layer {
@@ -195,7 +193,7 @@
         bindings = <
           &kp Q           &kp W           &kp F           &kp P           &kp B     &kp J &kp L           &kp U           &kp Y           &quote
           &lh_pht LSHFT A &lh_pht LCTRL R &lh_pht LALT S  &lh_pht LGUI T  &kp G     &kp M &rh_pht RGUI N  &rh_pht RALT E  &rh_pht RCTRL I &rh_pht RSHFT O
-          &kp Z           &kp X           &kp C           &kp D           &tdv      &kp K &kp H           &comma_morph    &dot_morph      &qmark
+          &kp Z           &kp X           &kp C           &kp D           &kp V      &kp K &kp H           &comma_morph    &dot_morph      &kp SLASH
                           &kp HYPER &kp TAB &lt RAISE SPACE                         &lt LOWER BKSP &mt LSHIFT RET &kp MEH
         >;
       };
@@ -205,7 +203,7 @@
         bindings = <
           &prompt     &kp STAR     &kp LBRC  &kp RBRC &trans           &trans      &kp AMPS  &kp PIPE        &kp PLUS          &kp GRAVE
           &kp TILDE   &kp PERCENT  &kp LPAR  &kp RPAR &kp CARET        &kp DOLLAR  &kp MINUS &kp UNDER       &kp HASH          &kp EQUAL 
-          &kp BSLH    &trans       &kp LBKT  &kp RBKT &trans           &trans      &kp AT    &kp LESS_THAN   &kp GREATER_THAN  &kp SLASH
+          &kp BSLH    &trans       &kp LBKT  &kp RBKT &trans           &trans      &kp AT    &kp LESS_THAN   &kp GREATER_THAN  &kp EXCL
                     &trans      &trans    &trans                                &trans    &trans    &trans 
         >;
       };
